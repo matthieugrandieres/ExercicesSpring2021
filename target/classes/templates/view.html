@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Users</title>
+    </head>
+    <body>
+        <header th:insert="fragments.html :: header (title = 'Users')"></header>
+
+        <h2>Add new User</h2>
+
+        <form action="#" th:action="@{/view}" th:method="post" th:object="${userRequest}">
+            <input type="text" placeholder="User Name" th:field="*{user}"/>
+            <input type="number" step="0.00001" placeholder="User Latitude" th:field="*{latitude}"/>
+            <input type="number" step="0.00001" placeholder="User Longitude" th:field="*{longitude}"/>
+            <input type="submit" name="create" value="Create"/>
+        </form>
+
+        <div th:if="${!users.isEmpty()}">
+            <hr/>
+            <h1>Users' List</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th> </th>
+                </tr>
+                <tr th:each ="user : ${users}">
+                    <form action="#" th:action="@{/view/delete/{id}(id=${user.id})}" th:method="post">
+                        <td><a th:href="@{/view/{id}(id=${user.id})}" th:utext="${user.name}"></a></td>
+                        <td th:utext="${user.city}"></td>
+                        <td><input type="submit" name="suppress" th:id="${user.id}" value="Suppress"/></td>
+                    </form>
+                </tr>
+            </table>
+        </div>
+
+        <footer th:insert="fragments.html :: footer"> </footer>
+    </body>
