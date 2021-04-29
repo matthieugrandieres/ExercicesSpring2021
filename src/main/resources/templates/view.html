@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>List des customers</h1>
-
+<button class="btn btn-info">Ajouter</button>
 <table class="table">
     <thead>
     <tr>
@@ -30,6 +30,7 @@
         <td th:utext="${customer.name}"></td>
         <td></td>
         <td></td>
+        <td><button class="btn btn-danger">Delete</button></td>
     </tr>
 
     </tbody>

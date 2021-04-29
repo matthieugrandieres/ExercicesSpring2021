@@ -36,14 +36,15 @@ public class CustomerController {
         return customService.getId(id - 1);
     }
 
-    @DeleteMapping(path = "/customers/{id}")
+    @DeleteMapping(path = "/customers/delete/{id}")
     public Customer deleteId(@PathVariable("id") int id){
         return customService.deleteId(id - 1);
     }
 
     @PostMapping(path = "/customers/create")
-    public void createCustomer() {
+    public String createCustomer() {
         customService.getAllCustomer().add(customService.createCustomer());
+        return "User create";
     }
 
     /**@GetMapping(path="/customers/{zip}")
