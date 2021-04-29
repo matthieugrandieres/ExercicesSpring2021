@@ -1,8 +1,0 @@
-com/mg/matgdrs/entity/User.class
-com/mg/matgdrs/service/UserService.class
-com/mg/matgdrs/UserRepository.class
-com/mg/matgdrs/MatgdrsApplication.class
-com/mg/matgdrs/controller/ViewController.class
-com/mg/matgdrs/dto/UserDTO.class
-com/mg/matgdrs/dao/UserDAO.class
-com/mg/matgdrs/controller/UserController.class
