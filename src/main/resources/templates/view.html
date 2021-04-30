@@ -30,7 +30,12 @@
         <td th:utext="${customer.name}"></td>
         <td></td>
         <td></td>
-        <td><button class="btn btn-danger">Delete</button></td>
+        <td>
+            <!--<form action="#" th:actions="@{'/customers/delete/{id}' (id=${customer.id})" th:method="delete">-->
+                <button class="btn btn-danger">Delete</button>
+            <!--</form>-->
+
+        </td>
     </tr>
 
     </tbody>
